@@ -1,0 +1,55 @@
+//
+//  ViewController.swift
+//  Jinne_Movies
+//
+//  Created by SwarupaJinne on 11/26/23.
+//
+
+import UIKit
+
+class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var genredata = arraygenre
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print("1")
+        return genredata.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //print("13")
+        let cell = genreTableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath)
+        cell.textLabel?.text = genredata[indexPath.row].category
+        return cell
+    }
+    
+
+    @IBOutlet weak var genreTableView: UITableView!
+    
+    
+    
+    
+    override func viewDidLoad() {
+        //print("17")
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        genreTableView.delegate = self
+        genreTableView.dataSource = self
+        self.title = "Movies App"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //print("19")
+        let transition = segue.identifier
+        if(transition=="movieSegue") {
+            let destination = segue.destination as! MoviesViewController
+            destination.name = genredata[(genreTableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+        
+        
+    }
+    
+
+
+
+
