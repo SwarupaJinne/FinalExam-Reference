@@ -1,0 +1,41 @@
+//
+//  ViewController.swift
+
+//
+.
+//
+
+import UIKit
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return brands.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = carsTableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath)
+        cell.textLabel?.text = brands[indexPath.row].name
+        return cell
+    }
+    
+
+    @IBOutlet weak var carsTableView: UITableView!
+    var brands = carBrands
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        carsTableView.delegate = self
+        carsTableView.dataSource = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var transistion = segue.identifier
+        if(transistion=="infoSegue") {
+            var destination = segue.destination as! BrandsInfoViewController
+            destination.brandCar = brands[(carsTableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+
+
+}
+
