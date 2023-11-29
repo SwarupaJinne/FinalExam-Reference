@@ -1,0 +1,40 @@
+import UIKit
+
+class BrandsInfoViewController: UIViewController {
+
+    @IBOutlet weak var BrandNameOutlet: UILabel!
+    
+    @IBOutlet weak var BrandImageOutlet: UIImageView!
+    var brandCar : Brand?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        BrandNameOutlet.text = brandCar?.name
+        BrandImageOutlet.image = UIImage(named: brandCar!.image)
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func ImageAnimate(_ sender: Any) {
+        
+        UIView.animate(withDuration: 1, animations: {
+            self.BrandImageOutlet.alpha = 0
+        })
+        
+        UIView.animate(withDuration: 1, delay: 0.5,animations: {
+            self.BrandImageOutlet.alpha = 1
+            self.BrandImageOutlet.image = UIImage(named: self.brandCar!.image)
+        })
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
