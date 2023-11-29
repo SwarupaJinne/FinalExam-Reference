@@ -1,0 +1,108 @@
+//
+//  MoviesViewController.swift
+//  Jinne_Movies
+//
+//  Created by SwarupaJinne on 11/26/23.
+//
+
+import UIKit
+
+class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let a = ( name?.movies.count)!
+        return a
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let myCell = movieCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! MovieCollectionViewCell
+        //populate the cell we created
+        myCell.assignMovies(with: (( name?.movies[indexPath.row])!))
+    
+        //return cell
+        return myCell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        movieNameLabel.text = "Movie Name: \(( name?.movies[indexPath.row].title)!)"
+        movieYearLabel.text = "Movie Year Released: \(( name?.movies[indexPath.row].releasedYear)!)"
+        movieRatingLabel.text = "Movie Rating: \(( name?.movies[indexPath.row].movieRating)!)"
+        movieBoxOfficeLabel.text = "Box Office Collection: \(( name?.movies[indexPath.row].boxOffice)!)"
+        moviePlotLabel.text = "Plot:  \n\(( name?.movies[indexPath.row].moviePlot)!)"
+        movieCastLabel.text = "Cast: \n\(( name?.movies[indexPath.row].cast.joined(separator:", "))!)"
+    }
+    
+   /* func setmovieinfo(index:IndexPath) {
+        movieNameLabel.text = "Movie Name: \((name?.movies[index.row].title)!)"
+        movieRatingLabel.text = "Movie Rating:\((name?.movies[index.row].movieRating)!)"
+        movieBoxOfficeLabel.text = "Box Office Collection: \((name!.movies[index.row].boxOffice)!)"
+        movieYearLabel.text = "Movie Released Year: \((name!.movies[index.row].releasedYear)!)"
+        moviePlotLabel.text = "Plot: \(name?.movies[index.row].moviePlot)"
+        var Cast = name?.movies[index.row].cast
+        var CastString : String = "Cast:"
+        let actors : String? = Cast?.joined(separator: ", ")
+        
+        movieCastLabel.text = "\(CastString) \(actors)"
+    }
+*/
+    
+    
+    @IBOutlet weak var movieCollectionView: UICollectionView!
+    
+    @IBOutlet weak var movieNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var movieRatingLabel: UILabel!
+    
+    
+    @IBOutlet weak var movieBoxOfficeLabel: UILabel!
+    
+    @IBOutlet weak var movieYearLabel: UILabel!
+    
+    
+    @IBOutlet weak var moviePlotLabel: UILabel!
+    
+    @IBOutlet weak var movieCastLabel: UILabel!
+    
+    var name : Genre?
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        movieCollectionView.dataSource=self
+        movieCollectionView.delegate=self
+        movieNameLabel.text = "Movie Name: "
+        movieCastLabel.text = "Cast: "
+        moviePlotLabel.text = "Plot: "
+        movieYearLabel.text = "Movie Year Released: "
+        movieRatingLabel.text = "Movie Rating: "
+        movieBoxOfficeLabel.text = "Box Office Collection:"
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+
+
+
+
+
+
+
+
+//
+
+
