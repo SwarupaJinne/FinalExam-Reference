@@ -1,0 +1,14 @@
+import Foundation
+
+struct Brand {
+    var name : String
+    var image : String
+}
+
+let b1 = Brand(name: "BMW", image: "bmw")
+let b2 = Brand(name: "Audi", image: "audi")
+let b3 = Brand(name: "Range Rover", image: "rover")
+let b4 = Brand(name: "Hyundai", image: "hyundai")
+let b5 = Brand(name: "Tesla", image: "tesla")
+
+var carBrands = [b1,b2,b3,b4,b5]
