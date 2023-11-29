@@ -1,0 +1,53 @@
+//
+//  MovieData.swift
+//  Jinne_Movies
+//
+//  Created by SwarupaJinne on 11/26/23.
+//
+
+import Foundation
+import UIKit
+
+struct Movie {
+    var title : String?
+    var image : UIImage?
+    var releasedYear : String?
+    var movieRating : String?
+    var boxOffice : String?
+    var moviePlot : String?
+    var cast : [String] = []
+
+    
+}
+
+
+struct Genre {
+    var category : String
+    var movies : [Movie] = []
+}
+
+let arrayGenre1 = Genre(category: "Comedy",movies: [Movie(title: "Jathiratnalu", image: UIImage(named:"Jathiratnalu"), releasedYear: "2021", movieRating: "7.3", boxOffice: "120M", moviePlot: "After being released from prison, three men start to plan their lives on the outside, searching for love and happiness.",cast: ["Faria Abdullah","Naveen Polishetty","Priyadarshi Pulikonda"]),Movie(title: "Kithakithalu", image: UIImage(named:"Kithakithalu"), releasedYear: "2007", movieRating: "8", boxOffice: "48M", moviePlot: "His attempts to make her grant him a divorce and whether he turns over a new leaf is the rest of the story.",cast: ["Allari Naresh","Geeta Singh","Madhu Shalini"]),Movie(title: "Venky", image: UIImage(named:"Venky") , releasedYear: "2004", movieRating: "7.4", boxOffice: "25.7M", moviePlot: "An unruly youth and three of his friends get selected for the police academy; they board a train where an old man and a girl get murdered and they become the suspects.",cast: ["Ravi Teja","Sneha","Brahmanandam"]),Movie(title: "Sontham", image: UIImage(named:"Sontham"), releasedYear: "2002", movieRating: "7.1", boxOffice: "57M", moviePlot: "Two guys and a girl are close friends; one of the guys believes that friendship is more valuable than love. But, the girl among them falls in love with this guy but does not express his feelings for him fearing rejection.",cast: ["Aryan Rajesh","Namitha","Sunil","Jhansi"]),Movie(title: "Nuvu Naku Nachavu", image: UIImage(named:"NuvuNakuNachavu") , releasedYear: "2001", movieRating: "8.8", boxOffice: "286M", moviePlot: "Venky and Nandini's relationship goes from one level to another. Although love blossoms between them, Nandini's marriage has already been fixed.",cast: ["Daggubati Venkatesh","Aarthi Agarwal","Prakash Raj","Brahmanandam"])])
+
+let arrayGenre2 = Genre(category: "Horror",movies: [Movie(title: "Prema katha chitram", image: UIImage(named:"Premakathachitram") , releasedYear: "2013", movieRating: "7.1", boxOffice: "810M", moviePlot: "The movie starts with Sudheer Babu, Praveen and Nanditha plan a group suicide because of their failures in their respective lives.",cast: ["Sudheer Babu","Nanditha Raj", "Praveen"]),Movie(title: "Kanchana", image: UIImage(named:"Kanchana") , releasedYear: "2011", movieRating: "6.6", boxOffice: "2.5M", moviePlot: "Raghava is a typical jobless youth who spends his days playing cricket with friends.",cast: ["Raghava Lawrence","Raai Laxmi", "Kovai Sarala"]),Movie(title: "Annabelle", image: UIImage(named:"Annabelle") , releasedYear: "2014", movieRating: "5.4", boxOffice: "257M", moviePlot: "John Form (Ward Horton) thinks he's found the perfect gift for his expectant wife, Mia (Annabelle Wallis) : a vintage doll in a beautiful white dress.",cast: ["Annabelle Wallis", "Ward Horton", "Alfre Woodard"]),Movie(title: "Chandramukhi", image: UIImage(named:"Chandramukhi") , releasedYear: "2005", movieRating: "7.2", boxOffice: "180M", moviePlot: "Creepy happenings in an abandoned mansion are attributed to the ghost of an ancient courtesan, back for revenge.",cast: ["Rajinikanth", "Prabhu","Jyothika"]),Movie(title: "Countdown", image: UIImage(named:"Countdown") , releasedYear: "2019", movieRating: "5.4", boxOffice: "48M", moviePlot: "The plot follows a group of people who discover a mobile app that correctly tells its users when they are going to die.",cast: ["Elizabeth Lail", "Jordan Calloway","Peter Facinelli"])])
+
+let arrayGenre3 = Genre(category: "Adventure",movies: [Movie(title: "Pirates of the Carrabain", image: UIImage(named: "PiratesoftheCarrabain") , releasedYear: "2003", movieRating: "8.1", boxOffice: "654M", moviePlot: "Capt. Jack Sparrow (Johnny Depp) arrives at Port Royal in the Caribbean without a ship or crew.",cast: ["Johnny Depp", "Keira Knightley", "Orlando Bloom"]),Movie(title: "Thor", image: UIImage(named:"Thor") , releasedYear: "2011", movieRating: "7", boxOffice: "449M", moviePlot: "As the son of Odin (Anthony Hopkins), king of the Norse gods, Thor (Chris Hemsworth) will soon inherit the throne of Asgard from his aging father. ",cast: ["Chris Hemsworth", "Natalie Portman", "Tom Hiddleston"]),Movie(title: "Captain America", image: UIImage(named:"CaptainAmerica") , releasedYear: "2014", movieRating: "8.4", boxOffice: "113M", moviePlot: "The story follows Shelby, who has short-term memory loss following a break-in at his house ",cast: ["Chris Evans", "Anthony Mackie", "Hayley Atwell"]),Movie(title: "Antman", image: UIImage(named:"Antman") , releasedYear: "2018", movieRating: "7.3", boxOffice: "513M", moviePlot: "After the cataclysmic events in New York with his fellow Avengers, Steve Rogers, aka Captain America (Chris Evans), lives in the nation's capital as he tries to adjust to modern times ",cast: ["Paul Rudd", "Michael Douglas", "Evangeline Lilly"]),Movie(title: "Ironman", image: UIImage(named:"Ironman") , releasedYear: "2008", movieRating: "7.9", boxOffice: "585M", moviePlot: "A billionaire industrialist and genius inventor, Tony Stark (Robert Downey Jr.), is conducting weapons tests overseas, but terrorists kidnap him to force him to build a devastating weapon.",cast: ["Robert Downey Jr", "Terrence Howard", "Leslie Bibb"])])
+
+let arraygenre = [arrayGenre1,arrayGenre2,arrayGenre3]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
