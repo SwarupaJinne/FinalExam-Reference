@@ -1,0 +1,27 @@
+//
+//  MovieCollectionViewCell.swift
+//  Jinne_Movies
+//
+//  Created by SwarupaJinne on 11/26/23.
+//
+
+import UIKit
+
+class MovieCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var ImageView: UIImageView!
+    
+    func assignMovies(with Moviee : Movie) {
+        ImageView.image = Moviee.image
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+
