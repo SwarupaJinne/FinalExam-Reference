@@ -1,0 +1,73 @@
+//
+//  ViewController.swift
+//  Dictionary_App
+//
+//  Created by Jinne,Swarupa on 11/28/23.
+//
+
+import UIKit
+
+class Words{
+    var wordName: String?
+    var wordNumber: String?
+    
+    init(wordName: String, wordNumber: String) {
+        self.wordName = wordName
+        self.wordNumber = wordNumber
+    }
+}
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print("1")
+        return words.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //print("13")
+        //create a cell
+                var cell = VCTableView.dequeueReusableCell(withIdentifier:  "TableViewCell", for: indexPath)
+                
+                //populate a cell
+                cell.textLabel?.text = words[indexPath.row][0]
+                
+                //return a cell
+                return cell
+        
+        
+    }
+    var words = [["Swarupa", "kithakithalu"], ["Swarupa1", "Jathirathnalu"], ["Swarupa2", "Kanchana"]]
+
+    
+    @IBOutlet weak var VCTableView: UITableView!
+    
+   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        VCTableView.delegate = self
+        VCTableView.dataSource = self
+        
+        
+            
+                
+        self.title = "Detail_Movies"
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let transition = segue.identifier
+        if(transition=="ResultSegue") {
+            let destination = segue.destination as! DetailViewController
+            destination.word = words[(VCTableView.indexPathForSelectedRow?.row)!]
+            
+        }
+    }
+
+
+}
+
